@@ -25,6 +25,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="index.php?page=data-event" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>Event</p>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="index.php?page=data-peminjaman-admin" class="nav-link">
             <i class="far fa-circle nav-icon"></i>
             <p>Peminjaman</p>

@@ -11,6 +11,7 @@ if ($koneksi->connect_error) {
     die("Koneksi Gagal: " . $koneksi->connect_error);
 }
 
+
 // Menentukan nilai default untuk $user_role jika belum ada dalam sesi
 if (!isset($_SESSION['user_role'])) {
     $_SESSION['user_role'] = 'guest';

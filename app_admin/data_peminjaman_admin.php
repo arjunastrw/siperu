@@ -42,22 +42,22 @@
                     <td><?php echo $pjm['keperluan']; ?></td>
                     <td>
                       <?php
-                        $mulaiTimestamp = strtotime($pjm['tanggalwaktu_mulai']);
-                        echo date('d-m-Y H:i', $mulaiTimestamp);
+                      $mulaiTimestamp = strtotime($pjm['tanggalwaktu_mulai']);
+                      echo date('d-m-Y H:i', $mulaiTimestamp);
                       ?>
                     </td>
                     <td>
                       <?php
-                        $selesaiTimestamp = strtotime($pjm['tanggalwaktu_selesai']);
-                        echo date('d-m-Y H:i', $selesaiTimestamp);
+                      $selesaiTimestamp = strtotime($pjm['tanggalwaktu_selesai']);
+                      echo date('d-m-Y H:i', $selesaiTimestamp);
                       ?>
                     </td>
                     <td><?php echo $pjm['nama']; ?></td>
                     <td>
                       <?php if (!empty($pjm['lampiran'])) : ?>
                         <?php
-                          $fileExtension = pathinfo($pjm['lampiran'], PATHINFO_EXTENSION);
-                          $fileIcon = getFileIcon($fileExtension);
+                        $fileExtension = pathinfo($pjm['lampiran'], PATHINFO_EXTENSION);
+                        $fileIcon = getFileIcon($fileExtension);
                         ?>
                         <a href="lampiran/<?php echo $pjm['lampiran']; ?>" target="_blank">
                           <i class="<?php echo $fileIcon; ?>"></i>
@@ -105,49 +105,49 @@
 <?php
 function getFileIcon($fileExtension)
 {
-    switch ($fileExtension) {
-        case 'pdf':
-            return 'far fa-file-pdf';
-        case 'doc':
-        case 'docx':
-            return 'far fa-file-word';
-        case 'xls':
-        case 'xlsx':
-            return 'far fa-file-excel';
-        case 'jpg':
-        case 'jpeg':
-        case 'png':
-            return 'far fa-file-image';
-        default:
-            return 'far fa-file';
-    }
+  switch ($fileExtension) {
+    case 'pdf':
+      return 'far fa-file-pdf';
+    case 'doc':
+    case 'docx':
+      return 'far fa-file-word';
+    case 'xls':
+    case 'xlsx':
+      return 'far fa-file-excel';
+    case 'jpg':
+    case 'jpeg':
+    case 'png':
+      return 'far fa-file-image';
+    default:
+      return 'far fa-file';
+  }
 }
 ?>
 
 <script>
-$(document).ready(function(){
+  $(document).ready(function() {
     // Initialize DateTimePicker for input tanggal mulai
     $('#reservationdatetimeStart').datetimepicker({
-        format: 'DD-MM-YYYY HH:mm',
-        useCurrent: false
+      format: 'DD-MM-YYYY HH:mm',
+      useCurrent: false
     }).on('focus', function() {
-        // Change format when focused
-        $(this).datetimepicker('format', 'MM/DD/YYYY hh:mm A');
+      // Change format when focused
+      $(this).datetimepicker('format', 'MM/DD/YYYY hh:mm A');
     }).on('blur', function() {
-        // Revert format when blurred
-        $(this).datetimepicker('format', 'DD-MM-YYYY HH:mm');
+      // Revert format when blurred
+      $(this).datetimepicker('format', 'DD-MM-YYYY HH:mm');
     });
 
     // Initialize DateTimePicker for input tanggal selesai
     $('#reservationdatetimeEnd').datetimepicker({
-        format: 'DD-MM-YYYY HH:mm',
-        useCurrent: false
+      format: 'DD-MM-YYYY HH:mm',
+      useCurrent: false
     }).on('focus', function() {
-        // Change format when focused
-        $(this).datetimepicker('format', 'MM/DD/YYYY hh:mm A');
+      // Change format when focused
+      $(this).datetimepicker('format', 'MM/DD/YYYY hh:mm A');
     }).on('blur', function() {
-        // Revert format when blurred
-        $(this).datetimepicker('format', 'DD-MM-YYYY HH:mm');
+      // Revert format when blurred
+      $(this).datetimepicker('format', 'DD-MM-YYYY HH:mm');
     });
-});
+  });
 </script>
